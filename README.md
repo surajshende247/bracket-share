@@ -2,7 +2,7 @@
 
 Real time collaboration for pair programming
 
-## Color Pellete
+## Color Pallete
 
 - Primary Color: ![#14B86E](https://via.placeholder.com/15/14B86E/000000?text=+) `#14B86E`
 
