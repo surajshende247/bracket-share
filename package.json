@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/surajshende247/bracket-share/issues"
   },
-  "homepage": "https://github.com/surajshende247/bracket-share#readme"
+  "homepage": "https://github.com/surajshende247/bracket-share#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13",
+    "nodemon": "^2.0.15"
+  }
 }
