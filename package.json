@@ -20,6 +20,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^6.0.13",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "socket.io": "^4.4.0"
   }
 }
