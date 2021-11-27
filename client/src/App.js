@@ -1,17 +1,17 @@
 import './App.css';
-import { BrowserRouter,Switch,Route,Redirect } from 'react-router-dom';
+import { BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
 
-import Home from './Home/Home';
-import PairProgramming from './PairProgramming/PairProgramming';
+import Home from './views/Home/Home';
+import PairProgramming from './views/PairProgramming/PairProgramming';
 
 function App() {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route exact path="/pairprogramming" component={PairProgramming} />
-        <Route exact path="/home" component={Home} />
-        <Redirect from="*" to="/home" />
-      </Switch>
+      <Routes>
+        <Route exact path="/pairprogramming" element={<PairProgramming />} />
+        <Route exact path="/" element={<Home />} />
+      </Routes>
+      <Navigate path="*" to="/" />
     </BrowserRouter>
   );
 }
