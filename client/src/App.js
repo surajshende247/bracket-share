@@ -11,7 +11,7 @@ function App() {
         <Route exact path="/pairprogramming" element={<PairProgramming />} />
         <Route exact path="/" element={<Home />} />
       </Routes>
-      <Navigate path="*" to="/" />
+      <Navigate path="*" to="/pairprogramming" />
     </BrowserRouter>
   );
 }

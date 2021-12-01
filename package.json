@@ -2,9 +2,9 @@
   "name": "bracket-share",
   "version": "1.0.0",
   "description": "Real time collaboration for pair programming",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^6.0.13",
+    "nanoid": "^3.1.30",
     "nodemon": "^2.0.15",
     "socket.io": "^4.4.0"
   }
