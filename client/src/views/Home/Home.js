@@ -15,7 +15,8 @@ function Home() {
     });
 
     const joinRoom = (e) =>{
-        localStorage.setItem("roomData", JSON.stringify(roomData));
+        localStorage.setItem("userName",roomData.userName);
+        localStorage.setItem("roomCode",roomData.roomCode);
         navigate('/pairprogramming');        
     }
 

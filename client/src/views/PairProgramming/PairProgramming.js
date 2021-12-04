@@ -7,6 +7,7 @@ const socket = io.connect();
 function PairProgramming() { 
     const [codeSnippet, setCodeSnippet] = useState();
     const [roomId, setRoomId] = useState('');
+    const [userName, setUserName] = useState('');
     
     const updateCodeSnippet = (e) => {
         e.preventDefault();
@@ -14,24 +15,25 @@ function PairProgramming() {
         socket.emit('chat', {codeSnippet: e.target.value, roomId: roomId});
     }
 
-    const joinRoom = (e) => {
-        e.preventDefault();
-        socket.emit('room', {roomId: roomId});
-    }
-
-     
-        
-
     useEffect(() => {
         socket.on('chat', (payload) => {
             setCodeSnippet(payload.codeSnippet);
         })
-
+        
+        let roomCode = localStorage.getItem("roomCode");
+        if(roomCode){
+            setRoomId(roomCode);
+            socket.emit('room', {roomId: roomCode});
+        }
+        let userName = localStorage.getItem("userName");
+        if(roomCode){
+            setUserName(userName);
+        }
     })
 
     return (
         <div>
-            <h1>Pair Programming: ({roomId})</h1>
+            <h1>Hello {userName}: [{roomId}]</h1>
           
             <div className="row">
                 <div className="col-md-8">
@@ -44,8 +46,7 @@ function PairProgramming() {
                     </textarea>
                     </div>
                 <div className="col-md-4">
-                    <input type="text" className="form-control" value={roomId} onChange={(e)=>{setRoomId(e.target.value)}} placeholder="Room Code" />
-                    <button className="btn btn-primary"  onClick={joinRoom} >Send</button>
+                    
                 </div>
                 
             </div>
