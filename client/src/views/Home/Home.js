@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './Home.css';
 
@@ -6,6 +7,18 @@ import imgBoy from './../../assets/img/img-boy.png';
 import imgGirl from './../../assets/img/img-girl.png';
 
 function Home() {
+    let navigate = useNavigate();
+
+    const [roomData, setRoomData] = useState({
+            userName: '',
+            roomCode: ''
+    });
+
+    const joinRoom = (e) =>{
+        localStorage.setItem("roomData", JSON.stringify(roomData));
+        navigate('/pairprogramming');        
+    }
+
     return (
         <div>
             <div className="row">
@@ -13,10 +26,22 @@ function Home() {
                     <div className="card-room-entry">
                         <h2 className="text-center">Join Room</h2>
                         <img src={imgGirl} className="img-fluid mx-auto d-block img-room-entry"/>
-                        <form>
-                            <input className="form-control mt-2" type="text" placeholder="Your Name" />
-                            <input className="form-control mt-2" type="text" placeholder="Room Code" />
-                            <button type="button" className="btn btn-warning w-100 mt-3">Join Room</button>
+                        <form onSubmit={joinRoom}>
+                            
+                            <input className="form-control mt-2" 
+                            type="text" 
+                            placeholder="Your Name" 
+                            value={roomData.userName}
+                            onChange={(e) => setRoomData({...roomData, userName: e.target.value})}
+                            required />
+
+                            <input className="form-control mt-2" 
+                            type="text" 
+                            placeholder="Room Code" 
+                            value={roomData.roomCode}
+                            onChange={(e) => setRoomData({...roomData, roomCode: e.target.value})}
+                            required/>
+                            <button type="submit" className="btn btn-warning w-100 mt-3">Join Room</button>
                         </form>
                     </div>
                 
