@@ -32,7 +32,7 @@ function PairProgramming() {
     })
 
     return (
-        <div>
+        <div className="container">
             <h1>Hello {userName}: [{roomId}]</h1>
           
             <div className="row">
@@ -45,8 +45,21 @@ function PairProgramming() {
                     >
                     </textarea>
                     </div>
-                <div className="col-md-4">
-                    
+                <div className="col-md-4 chat-window">
+                    <div className="chat-container">
+                        <div className="message left">
+                            XYZ: Hello Bhai Kaise ho
+                        </div>
+                        <div className="message right">
+                            Me: Badhiya
+                        </div>                        
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Type your message here..." />
+                        <div class="input-group-append">
+                            <span class="input-group-text">Send</span>
+                        </div>
+                    </div>
                 </div>
                 
             </div>

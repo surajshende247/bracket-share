@@ -9,3 +9,28 @@
     background-color: #fafafa;
     margin:5px;
 }
+.chat-window{
+    background-color: tomato;
+}
+.chat-container{
+    height:500px;
+    overflow-y: auto;
+}
+.message{
+    border: 1px solid #ccc;
+    margin-top:15px;
+    padding:10px;
+    background-color: #fafafa;
+}
+
+.message.left{
+    float: left;
+    clear: both;
+    border-radius: 20px 20px 20px 0;
+}
+
+.message.right{
+    float: right;
+    clear: both;
+    border-radius: 20px 20px  0 20px;
+}
