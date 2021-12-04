@@ -8,8 +8,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/home" element={<Home />} />
-        <Route exact path="/" element={<PairProgramming />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/pairprogramming" element={<PairProgramming />} />
       </Routes>
     </BrowserRouter>
   );

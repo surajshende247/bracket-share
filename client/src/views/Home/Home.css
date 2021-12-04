@@ -1,0 +1,14 @@
+.card-room-entry{
+    width:350px;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    margin: 10px;
+    box-shadow:5px 5px 8px black;
+}
+.card-room-entry:hover{
+    box-shadow:5px 5px 15px black;
+}
+.img-room-entry{
+    height:250px !important;
+}
