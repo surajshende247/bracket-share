@@ -8,16 +8,37 @@ function PairProgramming() {
     const [codeSnippet, setCodeSnippet] = useState();
     const [roomId, setRoomId] = useState('');
     const [userName, setUserName] = useState('');
+    const [chat, setChat] = useState([]);
+    const [message, setMessage] = useState('');
     
     const updateCodeSnippet = (e) => {
         e.preventDefault();
         setCodeSnippet(e.target.value);
-        socket.emit('chat', {codeSnippet: e.target.value, roomId: roomId});
+        socket.emit('code-snippet', {codeSnippet: e.target.value, roomId: roomId});
     }
 
+    const updateMessage = (e) => {
+        e.preventDefault();
+        setMessage(e.target.value);
+    }
+
+    const sendMessage = (e) => {
+        e.preventDefault();
+        if(message)
+        {
+            socket.emit('chat', {userName:userName ,message: message, roomId: roomId});
+        }
+        setMessage('');
+    }
+
+
     useEffect(() => {
-        socket.on('chat', (payload) => {
+        socket.on('code-snippet', (payload) => {
             setCodeSnippet(payload.codeSnippet);
+        })
+
+        socket.on('chat', (payload) => {
+            setChat([...chat, payload]);
         })
         
         let roomCode = localStorage.getItem("roomCode");
@@ -26,7 +47,7 @@ function PairProgramming() {
             socket.emit('room', {roomId: roomCode});
         }
         let userName = localStorage.getItem("userName");
-        if(roomCode){
+        if(userName){
             setUserName(userName);
         }
     })
@@ -46,18 +67,30 @@ function PairProgramming() {
                     </textarea>
                     </div>
                 <div className="col-md-4 chat-window">
-                    <div className="chat-container">
-                        <div className="message left">
-                            XYZ: Hello Bhai Kaise ho
-                        </div>
-                        <div className="message right">
-                            Me: Badhiya
-                        </div>                        
+                    <div className="chat-container">                   
+                        {
+                            chat.map((chat, index) => {
+                               return (
+                                chat.userName===userName
+                                ?
+                                <div className="message left" key={index}>
+                                    Me: {chat.message}
+                                </div>
+                                :
+                                <div className="message right" key={index}>
+                                    {chat.userName} : {chat.message}
+                                </div>
+                               )
+                            })
+                        }                       
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Type your message here..." />
+                        <input type="text" class="form-control"
+                         placeholder="Type your message here..." 
+                         value={message}
+                         onChange={updateMessage}/>
                         <div class="input-group-append">
-                            <span class="input-group-text">Send</span>
+                            <span class="input-group-text" onClick={sendMessage}>Send</span>
                         </div>
                     </div>
                 </div>

@@ -16,9 +16,13 @@ io.on('connection', (socket)=>{
     console.log(`What is Socket: `, socket);
     console.log("Socket is active to be connected");
     
+    socket.on('code-snippet', (paylaod)=>{
+        console.log(`code-snippet: `, paylaod);
+        io.sockets.in(paylaod.roomId).emit('code-snippet', paylaod);
+    });
+
     socket.on('chat', (paylaod)=>{
-        console.log(`Payload: `, paylaod);
-        //socket.broadcast.emit('chat', paylaod);
+        console.log(`chat: `, paylaod);
         io.sockets.in(paylaod.roomId).emit('chat', paylaod);
     });
 
