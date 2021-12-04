@@ -2,9 +2,13 @@
   "name": "bracket-share",
   "version": "1.0.0",
   "description": "Real time collaboration for pair programming",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node index.js",
+    "start-watch": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run start\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -19,6 +23,7 @@
   "homepage": "https://github.com/surajshende247/bracket-share#readme",
   "dependencies": {
     "ace-builds": "^1.4.13",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^6.0.13",
     "nanoid": "^3.1.30",

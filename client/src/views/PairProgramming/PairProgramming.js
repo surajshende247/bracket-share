@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import io from 'socket.io-client';
 import './PairProgramming.css'
 
-const socket = io.connect('192.168.121.95:5000');
+const socket = io.connect();
 
 function PairProgramming() { 
     const [codeSnippet, setCodeSnippet] = useState();
