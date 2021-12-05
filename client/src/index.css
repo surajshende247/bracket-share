@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -14,7 +15,7 @@ code {
 
 /*code for custom scrollbar starts here*/
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -27,6 +28,6 @@ code {
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
+  background: #4e4752; 
 }
 /*code for custom scrollbar ends here*/
