@@ -22,7 +22,8 @@ function Home() {
 
     const createRoom = (e) =>{
         localStorage.setItem("userName",roomData.userName);
-        localStorage.setItem("roomCode",roomData.roomCode);
+        const roomCode = roomData.userName.substring(0,3).toUpperCase() + Math.floor(Math.random() * 10)+ (new Date().getUTCMinutes());
+        localStorage.setItem("roomCode",roomCode);
         navigate('/pairprogramming');
     }
 
@@ -56,7 +57,12 @@ function Home() {
                         <h2 className="text-center">Create Room</h2>
                         <img src={imgBoy} className="img-fluid mx-auto d-block img-room-entry"/>
                         <form onSubmit={createRoom}>
-                            <input className="form-control mt-5" type="text" placeholder="Your Name" required/>
+                            <input className="form-control mt-5" 
+                            type="text" 
+                            placeholder="Your Name"
+                            value={roomData.userName}
+                            onChange={(e) => setRoomData({...roomData, userName: e.target.value})}
+                            required/>
                             <button type="submit" className="btn btn-warning w-100 mt-3">Create Room</button>
                         </form>
                     </div>
