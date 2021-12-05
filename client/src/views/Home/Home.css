@@ -1,5 +1,11 @@
-.home-container{
+.heading{
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-weight: bold;
 }
+.sub-heading{
+    font-family: 'Zen Kurenaido', sans-serif;
+}
+
 .img-logo{
     height: 100px;
 }

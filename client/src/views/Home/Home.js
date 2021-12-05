@@ -32,14 +32,14 @@ function Home() {
         <div className="home-container">
             <div className="p-2">
                                    
-                <h1 className="text-center"><img src={logo} alt="logo" className="img-logo"/>Bracket Share</h1>
+                <h1 className="text-center heading"><img src={logo} alt="logo" className="img-logo"/>Bracket Share</h1>
                             
-                <h5 className="text-center sub-heading">
+                <h3 className="text-center sub-heading">
                     A <span className="text-success fw-bold">Realtime</span>, {" "}
                     <span className="text-primary fw-bold">Pair Programming</span>{" "} 
                     platform for live code discussion, technical interview with {" "}
                     <span className="text-danger fw-bold">Chat feature</span>.
-                </h5>
+                </h3>
             </div>
 
             <div className="row mt-3 mb-3">
