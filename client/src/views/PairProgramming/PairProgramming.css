@@ -16,6 +16,7 @@
     height:500px;
     overflow-y: auto;
 }
+
 .message{
     border: 1px solid #ccc;
     margin-top:15px;
@@ -33,4 +34,30 @@
     float: right;
     clear: both;
     border-radius: 20px 20px  0 20px;
+}
+
+.message-sticker{
+
+}
+
+.message-sticker.left{
+    float: left;
+    clear: both;
+    border-radius: 20px 20px 20px 0;
+}
+
+.message-sticker.right{
+    float: right;
+    clear: both;
+    border-radius: 20px 20px  0 20px;
+}
+
+.chat-sticker{
+    height:70px;
+    width:70px;
+}
+
+.chat-message-sticker{
+    height:100px;
+    width:100px;
 }

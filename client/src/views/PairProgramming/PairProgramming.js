@@ -2,7 +2,13 @@ import React, {useEffect, useState} from 'react'
 import io from 'socket.io-client';
 import './PairProgramming.css'
 
+import icoDone from './../../assets/chat-stickers/ico-done.svg'
+import icoLike from './../../assets/chat-stickers/ico-like.svg'
+import icoReset from './../../assets/chat-stickers/ico-reset.svg'
+import icoTrophy from './../../assets/chat-stickers/ico-trophy.svg'
+
 const socket = io.connect();
+
 
 function PairProgramming() { 
     const [codeSnippet, setCodeSnippet] = useState();
@@ -31,6 +37,12 @@ function PairProgramming() {
         setMessage('');
     }
 
+    const sendSticker = (e) => {
+        e.preventDefault();
+        socket.emit('chat', {userName:userName ,message: e.target.name, roomId: roomId});
+        setMessage('');
+    }
+
 
     useEffect(() => {
         socket.on('code-snippet', (payload) => {
@@ -52,6 +64,21 @@ function PairProgramming() {
         }
     })
 
+    function renderSticker(message) {
+        switch (message) {
+            case 'ico-done':
+                return <img src={icoDone} alt="done" className="chat-message-sticker" />
+            case 'ico-like':
+                return <img src={icoLike} alt="like" className="chat-message-sticker" />
+            case 'ico-reset':
+                return <img src={icoReset} alt="reset" className="chat-message-sticker" />
+            case 'ico-trophy':
+                return <img src={icoTrophy} alt="trophy" className="chat-message-sticker" />
+            default:
+                return null;
+        }
+    }
+
     return (
         <div className="container">
             <h1>Hello {userName}: [{roomId}]</h1>
@@ -70,15 +97,19 @@ function PairProgramming() {
                     <div className="chat-container">                   
                         {
                             chat.map((chat, index) => {
+                              
+                                const  chatUser = chat.userName === userName ? 'Me' : chat.userName;
+                                const chatAlign = chat.userName === userName ? 'right' : 'left';
+
                                return (
-                                chat.userName===userName
+                                chat.message.startsWith('ico-') 
                                 ?
-                                <div className="message left" key={index}>
-                                    Me: {chat.message}
-                                </div>
+                                 <div className={`message-sticker ${chatAlign}`} key={index}>
+                                     {chatUser}:<br /> {renderSticker(chat.message)}
+                                 </div>
                                 :
-                                <div className="message right" key={index}>
-                                    {chat.userName} : {chat.message}
+                                <div className={`message ${chatAlign}`} key={index}>
+                                    {chatUser} :<br /> {chat.message}
                                 </div>
                                )
                             })
@@ -93,6 +124,13 @@ function PairProgramming() {
                             <span class="input-group-text" onClick={sendMessage}>Send</span>
                         </div>
                     </div>
+
+                        <div className="d-flex justify-content-around">
+                            <img src={icoDone} alt="done" className="chat-sticker" name="ico-done" onClick={sendSticker}/>
+                            <img src={icoLike} alt="done" className="chat-sticker" name="ico-like" onClick={sendSticker}/>
+                            <img src={icoReset} alt="done" className="chat-sticker" name="ico-reset"  onClick={sendSticker}/>
+                            <img src={icoTrophy} alt="done" className="chat-sticker" name="ico-trophy" onClick={sendSticker}/>
+                        </div>
                 </div>
                 
             </div>
