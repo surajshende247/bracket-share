@@ -115,17 +115,20 @@ function PairProgramming() {
                             })
                         }                       
                     </div>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control"
-                         placeholder="Type your message here..." 
-                         value={message}
-                         onChange={updateMessage}/>
-                        <div class="input-group-append">
-                            <span class="input-group-text" onClick={sendMessage}>Send</span>
-                        </div>
-                    </div>
+                   
+                        <form>
+                            <div class="d-flex flex-row">
+                            <input type="text" className="form-control d-flex d-inline"
+                            placeholder="Type your message here..." 
+                            value={message}
+                            onChange={updateMessage}/>
+                            
+                                <button type="submit" className="btn btn-warning d-flex d-inline" onClick={sendMessage}>Send</button>
+                                </div>
+                        </form>
+                    
 
-                        <div className="d-flex justify-content-around">
+                        <div className="d-flex justify-content-around container-stickers">
                             <img src={icoDone} alt="done" className="chat-sticker" name="ico-done" onClick={sendSticker}/>
                             <img src={icoLike} alt="done" className="chat-sticker" name="ico-like" onClick={sendSticker}/>
                             <img src={icoReset} alt="done" className="chat-sticker" name="ico-reset"  onClick={sendSticker}/>
