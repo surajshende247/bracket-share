@@ -94,6 +94,7 @@ function PairProgramming() {
                     </textarea>
                     </div>
                 <div className="col-md-4 chat-window">
+                    <h3 className="text-center">Chat Window</h3>
                     <div className="chat-container">                   
                         {
                             chat.map((chat, index) => {

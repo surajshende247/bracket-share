@@ -13,7 +13,7 @@
     background-color: tomato;
 }
 .chat-container{
-    height:600px;
+    height:500px;
     overflow-y: auto;
     background-image: url('./../../assets/img/chat-bg.png');
     padding:5px;
@@ -56,8 +56,12 @@
 }
 
 .chat-sticker{
-    height:70px;
-    width:70px;
+    height:60px;
+    width:60px;
+    background-color: #ccc;
+    padding: 5px;
+    border-radius:50%;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
 }
 
 .chat-message-sticker{
@@ -66,5 +70,5 @@
 }
 
 .container-stickers{
-    padding: 5px;
+    padding: 10px;
 }
