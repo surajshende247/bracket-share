@@ -12,3 +12,13 @@
 .img-room-entry{
     height:250px !important;
 }
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #d4cece;
+    font-size: 20px;
+    padding: 10px;
+}

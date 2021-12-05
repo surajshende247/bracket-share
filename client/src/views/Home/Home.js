@@ -73,6 +73,15 @@ function Home() {
                     <h2>Bracket Share Information</h2>
                 </div>
             </div>
+            <div className="d-flex flex-row d-flex justify-content-around">
+                <button className="btn btn-lg btn-dark  mt-3"> View Source Code on Github</button>
+                <button className="btn btn-lg btn-dark  mt-3"> View Source Code on Github</button>
+            </div>
+            <footer className="footer">
+                <div className="container text-center">
+                    Made With ❤️ by <a href="https://github.com/surajshende247">Suraj Shende</a> 
+                </div>
+            </footer>
         </div>
     )
 }
