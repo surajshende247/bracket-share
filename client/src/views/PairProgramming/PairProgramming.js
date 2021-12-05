@@ -43,6 +43,11 @@ function PairProgramming() {
         setMessage('');
     }
 
+    const copyInviteLink = (e) => {
+        e.preventDefault();
+        navigator.clipboard.writeText(`Hey...! Join me on Pair Programming. I am waiting for you. bracketshare.roadtocode.org  Room ID: ${roomId}`);
+    }
+
 
     useEffect(() => {
         socket.on('code-snippet', (payload) => {
@@ -81,7 +86,12 @@ function PairProgramming() {
 
     return (
         <div className="container">
-            <h1>Hello {userName}: [{roomId}]</h1>
+            <div className="meeting-info">
+                <h2>Namaste 🙏,  {userName}</h2>
+                <h4>Room ID: {roomId}</h4>
+                <p onClick={copyInviteLink}>Click here to copy invite link</p>
+
+            </div>
           
             <div className="row">
                 <div className="col-md-8">

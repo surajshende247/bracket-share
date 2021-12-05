@@ -9,6 +9,17 @@
     background-color: #fafafa;
     margin:5px;
 }
+
+.meeting-info{
+    padding:5px;
+    border: 1px solid rgb(0, 0, 0);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+
 .chat-window{
     background-color: tomato;
 }

@@ -20,6 +20,12 @@ function Home() {
         navigate('/pairprogramming');        
     }
 
+    const createRoom = (e) =>{
+        localStorage.setItem("userName",roomData.userName);
+        localStorage.setItem("roomCode",roomData.roomCode);
+        navigate('/pairprogramming');
+    }
+
     return (
         <div>
             <div className="row">
@@ -49,9 +55,9 @@ function Home() {
                     <div className="card-room-entry">
                         <h2 className="text-center">Create Room</h2>
                         <img src={imgBoy} className="img-fluid mx-auto d-block img-room-entry"/>
-                        <form>
-                            <input className="form-control mt-5" type="text" placeholder="Your Name" />
-                            <button type="button" className="btn btn-warning w-100 mt-3">Create Room</button>
+                        <form onSubmit={createRoom}>
+                            <input className="form-control mt-5" type="text" placeholder="Your Name" required/>
+                            <button type="submit" className="btn btn-warning w-100 mt-3">Create Room</button>
                         </form>
                     </div>
                    
