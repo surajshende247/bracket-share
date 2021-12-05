@@ -74,8 +74,8 @@ function Home() {
                 </div>
             </div>
             <div className="d-flex flex-row d-flex justify-content-around">
-                <button className="btn btn-lg btn-dark  mt-3"> View Source Code on Github</button>
-                <button className="btn btn-lg btn-dark  mt-3"> View Source Code on Github</button>
+                <a href="https://github.com/surajshende247/bracket-share" target="_blank" className="btn btn-lg btn-dark  mt-3"> View Source Code on Github <i className="fa fa-github"></i></a>
+                <a href="https://github.com/surajshende247/bracket-share/issues/new" target="_blank" className="btn btn-lg btn-danger  mt-3"> Report Bug <i className="fa fa-bug"></i></a>
             </div>
             <footer className="footer">
                 <div className="container text-center">
