@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import io from 'socket.io-client';
 import './PairProgramming.css'
 import toast, { Toaster } from 'react-hot-toast';
@@ -13,7 +14,9 @@ import logo from './../../assets/img/logo.svg';
 const socket = io.connect();
 
 
-function PairProgramming() { 
+function PairProgramming() {
+    let navigate = useNavigate();
+
     const [codeSnippet, setCodeSnippet] = useState();
     const [roomId, setRoomId] = useState('');
     const [userName, setUserName] = useState('');
@@ -80,8 +83,14 @@ function PairProgramming() {
         
         setRoomId(roomCode);
         setUserName(userName);
-        socket.emit('room', {roomId: roomCode, userName: userName});
-        
+        if(roomCode!=null && userName!=null)
+        {
+            socket.emit('room', {roomId: roomCode, userName: userName});
+        }
+        else{
+            alert('Invalid Room... Kindly Create new room');
+            navigate('/');
+        }
     })
 
     function scrollChatBottom() {
@@ -125,7 +134,7 @@ function PairProgramming() {
                 <div className="col-md-8">
                     <textarea 
                     className="codeEditor" 
-                    placeholder="Pair Programming"
+                    placeholder="Write your code here... This code syncs with all other members in this room"
                     value={codeSnippet}
                     onChange={updateCodeSnippet}
                     >
