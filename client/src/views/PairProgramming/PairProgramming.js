@@ -17,6 +17,7 @@ function PairProgramming() {
     const [userName, setUserName] = useState('');
     const [chat, setChat] = useState([]);
     const [message, setMessage] = useState('');
+    const [roomMembers, setRoomMembers] = useState([]);
     
     const updateCodeSnippet = (e) => {
         e.preventDefault();
@@ -57,8 +58,19 @@ function PairProgramming() {
         socket.on('chat', (payload) => {
             setChat([...chat, payload]);
         })
+
+        function isPresent(arr,user) {
+            return (arr.indexOf(user) != -1);
+        }
+
         socket.on('room', (payload) => {
-            toast.success(`${payload.userName} has joined the room, ${payload.roomId}`);
+            if(!isPresent(roomMembers, payload.userName))
+            {
+                toast.success(`${payload.userName} has joined the room, ${payload.roomId}`,{
+                    toastId: 'room',
+                });
+                setRoomMembers([...roomMembers, payload.userName]);
+            }
         })
         
         const roomCode = localStorage.getItem("roomCode");
