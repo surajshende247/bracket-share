@@ -62,7 +62,7 @@ function Home() {
                             value={roomData.roomCode}
                             onChange={(e) => setRoomData({...roomData, roomCode: e.target.value})}
                             required/>
-                            <button type="submit" className="btn btn-warning w-100 mt-3 fw-bold">Join Room</button>
+                            <button type="submit" className="btn-room-entry"><i class="fas fa-sign-in-alt"></i> Join Room</button>
                         </form>
                     </div>
                 
@@ -76,7 +76,7 @@ function Home() {
                             value={roomData.userName}
                             onChange={(e) => setRoomData({...roomData, userName: e.target.value})}
                             required/>
-                            <button type="submit" className="btn btn-warning w-100 mt-3 fw-bold">Create Room</button>
+                            <button type="submit" className="btn-room-entry"><i class="fas fa-chalkboard"></i> Create Room</button>
                         </form>
                     </div>
                    
