@@ -28,6 +28,7 @@ function PairProgramming() {
     const updateMessage = (e) => {
         e.preventDefault();
         setMessage(e.target.value);
+        scrollChatBottom();
     }
 
     const sendMessage = (e) => {
@@ -80,6 +81,11 @@ function PairProgramming() {
         
     })
 
+    function scrollChatBottom() {
+        const chatBox = document.getElementById('chat-box');
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
     function renderSticker(message) {
         switch (message) {
             case 'ico-done':
@@ -90,9 +96,8 @@ function PairProgramming() {
                 return <img src={icoReset} alt="reset" className="chat-message-sticker" />
             case 'ico-trophy':
                 return <img src={icoTrophy} alt="trophy" className="chat-message-sticker" />
-            default:
-                return null;
         }
+        scrollChatBottom();
     }
 
     return (
@@ -118,7 +123,7 @@ function PairProgramming() {
                     </div>
                 <div className="col-md-4 chat-window">
                     <h3 className="text-center">Chat Window</h3>
-                    <div className="chat-container">                   
+                    <div className="chat-container" id="chat-box">                   
                         {
                             chat.map((chat, index) => {
                               

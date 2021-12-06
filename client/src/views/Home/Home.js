@@ -45,7 +45,7 @@ function Home() {
             <div className="row mt-3 mb-3">
                 <div className="col-md-8 d-md-flex flex-row justify-content-evenly">
                     <div className="card-room-entry">
-                        <h2 className="text-center">Join Room</h2>
+                        <h2 className="card-room-title text-center">Join Room</h2>
                         <img src={imgGirl} className="img-fluid mx-auto d-block img-room-entry"/>
                         <form onSubmit={joinRoom}>
                             
@@ -67,7 +67,7 @@ function Home() {
                     </div>
                 
                     <div className="card-room-entry">
-                        <h2 className="text-center">Create Room</h2>
+                        <h2 className="card-room-title text-center">Create Room</h2>
                         <img src={imgBoy} className="img-fluid mx-auto d-block img-room-entry"/>
                         <form onSubmit={createRoom}>
                             <input className="form-control mt-5" 

@@ -1,6 +1,7 @@
 .heading{
     font-family: 'Zen Kurenaido', sans-serif;
     font-weight: bold;
+    color: #74340f;
 }
 .sub-heading{
     font-family: 'Zen Kurenaido', sans-serif;
@@ -20,6 +21,11 @@
 }
 .card-room-entry:hover{
     box-shadow:5px 5px 10px black;
+}
+.card-room-title{
+    color:#74340f;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-weight: bold;
 }
 .img-room-entry{
     height:250px !important;
