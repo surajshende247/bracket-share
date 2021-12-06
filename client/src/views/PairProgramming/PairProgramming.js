@@ -58,14 +58,16 @@ function PairProgramming() {
             setChat([...chat, payload]);
         })
         
-        let roomCode = localStorage.getItem("roomCode");
-        if(roomCode){
+        const roomCode = localStorage.getItem("roomCode");
+        const userName = localStorage.getItem("userName");
+        if(roomCode && userName) {
             setRoomId(roomCode);
+            setUserName(userName);
             socket.emit('room', {roomId: roomCode});
         }
-        let userName = localStorage.getItem("userName");
-        if(userName){
-            setUserName(userName);
+        else
+        {
+            alert('Invalid User');
         }
     })
 
