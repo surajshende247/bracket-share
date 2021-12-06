@@ -8,6 +8,8 @@ import icoLike from './../../assets/chat-stickers/ico-like.svg'
 import icoReset from './../../assets/chat-stickers/ico-reset.svg'
 import icoTrophy from './../../assets/chat-stickers/ico-trophy.svg'
 
+import logo from './../../assets/img/logo.svg';
+
 const socket = io.connect();
 
 
@@ -28,7 +30,6 @@ function PairProgramming() {
     const updateMessage = (e) => {
         e.preventDefault();
         setMessage(e.target.value);
-        scrollChatBottom();
     }
 
     const sendMessage = (e) => {
@@ -48,7 +49,8 @@ function PairProgramming() {
 
     const copyInviteLink = (e) => {
         e.preventDefault();
-        navigator.clipboard.writeText(`Hey...! Join me on Pair Programming. I am waiting for you. bracketshare.roadtocode.org  Room ID: ${roomId}`);
+        navigator.clipboard.writeText(`Hey...! Join me on Bracket Share. I am waiting for you. https://bracket-share.roadtocode.org  Room ID: ${roomId}`);
+        toast.success('Invite link copied to clipboard');
     }
 
     useEffect(() => {
@@ -58,6 +60,7 @@ function PairProgramming() {
 
         socket.on('chat', (payload) => {
             setChat([...chat, payload]);
+            scrollChatBottom();
         })
 
         function isPresent(arr,user) {
@@ -102,10 +105,17 @@ function PairProgramming() {
 
     return (
         <div className="container">
-            <div className="meeting-info">
-                <h2>Namaste 🙏,  {userName}</h2>
-                <h4>Room ID: {roomId}</h4>
-                <p onClick={copyInviteLink}>Click here to copy invite link</p>
+            <div className="meeting-info d-flex flex-row d-flex justify-content-between">
+                <div className="p-2">
+                    <h3 className="title"><img src={logo} className="img-fluid" />Bracket Share</h3>
+                </div>
+                <div className="p-2">
+                    <h2>Hello,  {userName}</h2>
+                </div>
+                <div className="p-2">
+                    <h4>Room ID: {roomId}</h4>
+                    <a href="#" className="btn btn-secondary" onClick={copyInviteLink}>Copy invite link{" "} <i class="far fa-copy"></i></a>
+                </div>
                 <Toaster
                 position="top-right"
                 reverseOrder={false} />
@@ -122,7 +132,7 @@ function PairProgramming() {
                     </textarea>
                     </div>
                 <div className="col-md-4 chat-window">
-                    <h3 className="text-center">Chat Window</h3>
+                    <h3 className="text-center title p-1 text-dark">Chat Window</h3>
                     <div className="chat-container" id="chat-box">                   
                         {
                             chat.map((chat, index) => {
@@ -152,7 +162,7 @@ function PairProgramming() {
                             value={message}
                             onChange={updateMessage}/>
                             
-                                <button type="submit" className="btn btn-warning d-flex d-inline" onClick={sendMessage}>Send</button>
+                                <button type="submit" className="btn-send-message d-flex d-inline justify-content-center align-self-center" onClick={sendMessage}><i class="far fa-paper-plane"></i></button>
                                 </div>
                         </form>
                     

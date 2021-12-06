@@ -1,3 +1,12 @@
+.title{
+    color:#74340f;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-weight: bold;
+}
+.title img{
+     height:70px;
+}
+
 .codeEditor{
     width: 100%;
     height: 80vh;
@@ -16,6 +25,8 @@
     margin: 5px;
     padding: 5px;
     border-radius: 5px;
+    background-color: #fafafa;
+
 }
 
 
@@ -68,10 +79,16 @@
     border-radius: 20px 20px  0 20px;
 }
 
+.btn-send-message{
+   border:none;
+   font-size: 20px;
+   padding: 10px;
+}
+
 .chat-sticker{
     height:60px;
     width:60px;
-    background-color: #ccc;
+    background-color: rgb(255, 255, 255);
     padding: 5px;
     border-radius:50%;
     box-shadow: 0px 0px 5px rgb(0, 0, 0);
