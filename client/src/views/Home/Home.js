@@ -82,14 +82,13 @@ function Home() {
                    
                     
                 </div>
-                <div className="col-md-4">
-                    <h2>What is Bracket Share ?</h2>
-                    <p></p>
-                    <h3>✅Feature-1</h3>
-                    <h3>✅Feature-2</h3>
-                    <h3>✅Feature-3</h3>
-                    <h3>✅Feature-4</h3>
-                    <h3>✅Feature-5</h3>
+                <div className="col-md-4 d-flex flex-column justify-content-evenly">                                  
+                    <h3>✅Realtime colaboration</h3>
+                    <h3>✅Built from scratch</h3>
+                    <h3>✅Light weighted</h3>                    
+                    <h3>✅Chat with peers in the same room</h3>
+                    <h3>✅No time limit</h3>
+                    <h3>✅Unlimited room creation</h3>
                 </div>
             </div>
             
