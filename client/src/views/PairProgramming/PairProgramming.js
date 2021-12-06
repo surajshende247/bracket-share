@@ -64,13 +64,11 @@ function PairProgramming() {
         }
 
         socket.on('room', (payload) => {
-            if(!isPresent(roomMembers, payload.userName))
+           /* if(!isPresent(roomMembers, payload.userName))
             {
-                toast.success(`${payload.userName} has joined the room, ${payload.roomId}`,{
-                    toastId: 'room',
-                });
+                toast.success(`${payload.userName} has joined the room, ${payload.roomId}`);
                 setRoomMembers([...roomMembers, payload.userName]);
-            }
+            }*/
         })
         
         const roomCode = localStorage.getItem("roomCode");

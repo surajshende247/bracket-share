@@ -4,10 +4,12 @@ Real time collaboration for pair programming
 
 ## Color Pallete
 
-- Primary Color: ![#14B86E](https://via.placeholder.com/15/14B86E/000000?text=+) `#14B86E`
+- Color1: ![#fff6df](https://via.placeholder.com/15/14B86E/000000?text=+) `#fff6df`
 
-- Secondary Color: ![#FFE3B3](https://via.placeholder.com/15/FFE3B3/000000?text=+) `#FFE3B3`
+- Color2: ![#fffefa](https://via.placeholder.com/15/FFE3B3/000000?text=+) `#fffefa`
 
-- Error Color: ![#F01445](https://via.placeholder.com/15/F01445/000000?text=+) `#F01445`
+- Color3: ![#351e11](https://via.placeholder.com/15/F01445/000000?text=+) `#351e11`
 
-- Background Color: ![#F4F3F1](https://via.placeholder.com/15/F4F3F1/000000?text=+) `#F4F3F1`
+- Color4: ![#e15549](https://via.placeholder.com/15/F4F3F1/000000?text=+) `#e15549`
+  
+- Color5: ![#a1724e](https://via.placeholder.com/15/F4F3F1/000000?text=+) `#a1724e`
