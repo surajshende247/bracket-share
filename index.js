@@ -29,9 +29,10 @@ io.on('connection', (socket)=>{
     socket.on('room', function(room) {
         if(socket.room)
             socket.leave(socket.room);
-            
+
         socket.join(room.roomId);
-        console.log(`Someone joined ${room.roomId}`);
+        console.log(`${room.userName} joined ${room.roomId}`);
+        io.sockets.in(room.roomId).emit('room', room);
     });
 
     

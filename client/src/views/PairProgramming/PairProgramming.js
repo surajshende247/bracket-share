@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import io from 'socket.io-client';
 import './PairProgramming.css'
+import toast, { Toaster } from 'react-hot-toast';
 
 import icoDone from './../../assets/chat-stickers/ico-done.svg'
 import icoLike from './../../assets/chat-stickers/ico-like.svg'
@@ -48,7 +49,6 @@ function PairProgramming() {
         navigator.clipboard.writeText(`Hey...! Join me on Pair Programming. I am waiting for you. bracketshare.roadtocode.org  Room ID: ${roomId}`);
     }
 
-
     useEffect(() => {
         socket.on('code-snippet', (payload) => {
             setCodeSnippet(payload.codeSnippet);
@@ -57,18 +57,17 @@ function PairProgramming() {
         socket.on('chat', (payload) => {
             setChat([...chat, payload]);
         })
+        socket.on('room', (payload) => {
+            toast.success(`${payload.userName} has joined the room, ${payload.roomId}`);
+        })
         
         const roomCode = localStorage.getItem("roomCode");
         const userName = localStorage.getItem("userName");
-        if(roomCode && userName) {
-            setRoomId(roomCode);
-            setUserName(userName);
-            socket.emit('room', {roomId: roomCode});
-        }
-        else
-        {
-            alert('Invalid User');
-        }
+        
+        setRoomId(roomCode);
+        setUserName(userName);
+        socket.emit('room', {roomId: roomCode, userName: userName});
+        
     })
 
     function renderSticker(message) {
@@ -92,7 +91,9 @@ function PairProgramming() {
                 <h2>Namaste 🙏,  {userName}</h2>
                 <h4>Room ID: {roomId}</h4>
                 <p onClick={copyInviteLink}>Click here to copy invite link</p>
-
+                <Toaster
+                position="top-right"
+                reverseOrder={false} />
             </div>
           
             <div className="row">
