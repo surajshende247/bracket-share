@@ -97,9 +97,9 @@ function Home() {
                 <a href="https://www.producthunt.com/posts/bracket-share?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bracket-share" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=322033&theme=light" alt="Bracket Share - Pair Programming Platform with Chat feature. | Product Hunt"  width="250" height="54" /></a>
                 <a href="https://github.com/surajshende247/bracket-share" target="_blank" className="btn btn-lg btn-dark me-3 ms-3"> Github <i className="fa fa-github"></i></a>
             </div>
-                <div className="footer-text container text-center">
+                {/* <div className="footer-text container text-center">
                     Made With ❤️ by <a href="https://github.com/surajshende247">Suraj Shende</a> 
-                </div>
+                </div> */}
             </footer>
         </div>
     )
