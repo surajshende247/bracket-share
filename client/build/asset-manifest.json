@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8d182182.chunk.css",
+    "main.js": "/static/js/main.edc1899a.chunk.js",
+    "main.js.map": "/static/js/main.edc1899a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.776c1e0d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.776c1e0d.js.map",
+    "static/css/2.383c0125.chunk.css": "/static/css/2.383c0125.chunk.css",
+    "static/js/2.bb65b8b6.chunk.js": "/static/js/2.bb65b8b6.chunk.js",
+    "static/js/2.bb65b8b6.chunk.js.map": "/static/js/2.bb65b8b6.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.383c0125.chunk.css.map": "/static/css/2.383c0125.chunk.css.map",
+    "static/css/main.8d182182.chunk.css.map": "/static/css/main.8d182182.chunk.css.map",
+    "static/js/2.bb65b8b6.chunk.js.LICENSE.txt": "/static/js/2.bb65b8b6.chunk.js.LICENSE.txt",
+    "static/media/PairProgramming.css": "/static/media/chat-bg.bded4f44.png",
+    "static/media/ico-done.c77e7932.svg": "/static/media/ico-done.c77e7932.svg",
+    "static/media/ico-like.6956afb5.svg": "/static/media/ico-like.6956afb5.svg",
+    "static/media/ico-reset.22d4d0be.svg": "/static/media/ico-reset.22d4d0be.svg",
+    "static/media/ico-trophy.50ee2fee.svg": "/static/media/ico-trophy.50ee2fee.svg",
+    "static/media/img-boy.184e88c9.png": "/static/media/img-boy.184e88c9.png",
+    "static/media/img-girl.aeb31b9e.png": "/static/media/img-girl.aeb31b9e.png",
+    "static/media/logo.819e6d18.svg": "/static/media/logo.819e6d18.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.776c1e0d.js",
+    "static/css/2.383c0125.chunk.css",
+    "static/js/2.bb65b8b6.chunk.js",
+    "static/css/main.8d182182.chunk.css",
+    "static/js/main.edc1899a.chunk.js"
+  ]
+}
