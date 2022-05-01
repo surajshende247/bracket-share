@@ -23,6 +23,7 @@ function PairProgramming() {
     const [chat, setChat] = useState([]);
     const [message, setMessage] = useState('');
     const [roomMembers, setRoomMembers] = useState([]);
+
     
     const updateCodeSnippet = (e) => {
         e.preventDefault();
@@ -93,6 +94,17 @@ function PairProgramming() {
         }
     })
 
+    useEffect(() => {
+        const users = [];
+        chat.map((chat) => {
+            users.push(chat.userName);
+            return true;
+        });
+        const uniq = [...new Set(users)];
+        setRoomMembers(uniq);
+    },[chat]);
+
+
     function scrollChatBottom() {
         const chatBox = document.getElementById('chat-box');
         chatBox.scrollTop = chatBox.scrollHeight;
@@ -132,6 +144,14 @@ function PairProgramming() {
           
             <div className="row">
                 <div className="col-md-8">
+                    <div className="shadow p-3">
+                        <h6>Active Members</h6>
+                        {
+                            roomMembers.map((member) => {
+                                return <span className="member-name">{member} 🟢</span>
+                            })
+                        }
+                    </div>
                     <textarea 
                     className="codeEditor" 
                     placeholder="Write your code here... This code syncs with all other members in this room"

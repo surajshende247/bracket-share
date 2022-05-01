@@ -102,3 +102,13 @@
 .container-stickers{
     padding: 10px;
 }
+
+.member-name{
+    background-color: white;
+    padding: 5px;
+    font-size:10px;
+    border-radius: 15px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
