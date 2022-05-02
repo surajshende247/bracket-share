@@ -53,7 +53,7 @@ function PairProgramming() {
 
     const copyInviteLink = (e) => {
         e.preventDefault();
-        navigator.clipboard.writeText(`Hey...! Join me on Bracket Share. I am waiting for you. https://bracket-share.roadtocode.org  Room ID: ${roomId}`);
+        navigator.clipboard.writeText(`Hey...! Join me on Bracket Share. I am waiting for you. https://bracket-share.onrender.com  Room ID: ${roomId}`);
         toast.success('Invite link copied to clipboard');
     }
 
